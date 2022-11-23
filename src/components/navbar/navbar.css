@@ -1,8 +1,13 @@
-.boton {
-    color: red;
+.navbar {
+    background-color: rgb(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 10px aquamarine !important;
+}
+.nav-link {
+    transition: all ease .5s !important;
+    color: aquamarine !important;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
+.nav-link:hover {
+    transform: scale(1.1);
+    text-shadow: 0px 0px 5px gray;
 }
