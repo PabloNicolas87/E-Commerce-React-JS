@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail.js';
 
+
 const ItemDetailContainer = () => {
 
     const [items, setProduct] = useState({})
@@ -21,7 +22,9 @@ const ItemDetailContainer = () => {
 
     
     return (
-        <ItemDetail id={items.id} title={items.title} description={items.description} price={items.price} category={items.category} pictureUrl={items.pictureUrl} stock={items.stock}/>
+        <div>
+            <ItemDetail id={items.id} title={items.title} description={items.description} price={items.price} category={items.category} pictureUrl={items.pictureUrl} stock={items.stock}/>    
+        </div>
     )
 }
 

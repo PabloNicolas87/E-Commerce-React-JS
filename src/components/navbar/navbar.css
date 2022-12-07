@@ -6,8 +6,19 @@
     transition: all ease .5s !important;
     color: aquamarine !important;
 }
+.nav-link-activo {
+    color: aquamarine !important;
+    text-decoration: none !important;
+    transform: scale(1.1);
+    text-shadow: 0px 0px 5px gray;
+    border-bottom: 2px solid aquamarine;
+}
 
 .nav-link:hover {
     transform: scale(1.1);
     text-shadow: 0px 0px 5px gray;
+}
+.nav-item {
+    padding-left: 10px;
+    padding-right: 10px;
 }

@@ -34,7 +34,7 @@ const items = [
       price:'800',
       category: 'notebook',
       stock: 20,
-      pictureUrl: './images/notebookdellinspironseries3501.jpg',
+      pictureUrl: '/images/notebookdellinspironseries3501.jpg',
     },
     {
       id: '5',

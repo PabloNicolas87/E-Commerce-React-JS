@@ -1,5 +1,6 @@
 import './Navbar.css';
 import CartWidget from '../CartWidget/CartWidget';
+import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -11,14 +12,14 @@ const Navbar = () => {
                 </Link>
                 <div className="collapse navbar-collapse" >
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <Link to='/category/tablet' className="nav-link" href="#">Tablets</Link>
+                        <li className="nav-item d-flex justify-content-center align-items-center">
+                            <NavLink to='/category/tablet' className= {({ isActive }) => isActive ? 'nav-link-activo' : 'nav-link' }>Tablets</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <Link to='/category/celular' className="nav-link" href="#">Celulares</Link>
+                        <li className="nav-item d-flex justify-content-center align-items-center">
+                            <NavLink to='/category/celular' className= {({ isActive }) => isActive ? 'nav-link-activo' : 'nav-link' }>Celulares</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <Link to='/category/notebook' className="nav-link" href="#">Notebooks</Link>
+                        <li className="nav-item d-flex justify-content-center align-items-center">
+                            <NavLink to='/category/notebook' className= {({ isActive }) => isActive ? 'nav-link-activo' : 'nav-link' }>Notebooks</NavLink>
                         </li>
                     </ul>
                 </div>
