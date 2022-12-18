@@ -1,11 +1,10 @@
-import './Item.css';
 import { Link } from 'react-router-dom';
 
 const Item = ({ item }) => {
     return (
-        <div className="col-12 col-lg-6 col-xl-4 d-flex flex-column align-items-center p-2">
+        <div className="col-12 col-lg-6 col-xl-4 d-flex flex-column text-center p-2">
             <div className='card p-2'>
-                <h2 className='titulo'>{item.title}</h2>
+                <h2 className='titulo d-flex align-items-center justify-content-center'>{item.title}</h2>
                 <div className='imagen'>
                     <img src={item.pictureUrl} alt={item.title}/>    
                 </div>

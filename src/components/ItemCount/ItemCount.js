@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './ItemCount.css';
 
 const  ItemCount = ({initial, stock, onAdd}) => {
     const [count, setCount] = useState(initial)
@@ -17,12 +16,12 @@ const  ItemCount = ({initial, stock, onAdd}) => {
     return (
         <div>
             <div className='d-flex justify-content-center align-items-center py-3'>
-                <a className="btn-suma px-2" onClick={() => decrease()}>-</a>
+                <button className="btn-suma px-2" onClick={() => decrease()}>-</button>
                 <h2 className="px-2">{count}</h2>
-                <a className="btn-resta px-2" onClick={() => increment()}>+</a>
+                <button className="btn-resta px-2" onClick={() => increment()}>+</button>
             </div>
             <div className='py-3'>
-                <a className="cart p-2" onClick={() =>onAdd(count)} disabled={!count}>Agregar al carrito</a>
+                <button className="cart p-2" onClick={() =>onAdd(count)} disabled={!count}>Agregar al carrito</button>
             </div>    
         </div>
         
