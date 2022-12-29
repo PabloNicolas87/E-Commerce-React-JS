@@ -4,6 +4,7 @@ import { collection, addDoc, getDocs, query, where, documentId, writeBatch } fro
 import { db } from "../../services/firebase/firebaseConfig"
 import { useNavigate } from 'react-router-dom'
 
+
 const Checkout = () => {
     const { cart, getTotal, removeCartPostVenta } = useContext(CartContext)
     const [loading, setLoading] = useState(false)
@@ -99,7 +100,7 @@ const Checkout = () => {
             <h2 className="py-3">Checkout</h2>
             <form className="card p-5" onSubmit={handleCreateOrder}>
                 <div className="form-group d-flex flex-column justify-content-center align-items-center">
-                    <input className="my-3 py-1" type="text" name="name" placeholder="Ingrese su nombre" onChange={capturarInputs} value={user.name}></input>
+                    <input className="my-3 py-1" type="text" name="name" placeholder="Ingrese su nombre" onChange={capturarInputs} value={user.name} ></input>
                     <input className="my-3 py-1" type="email" name="email" placeholder="Ingrese su email" onChange={capturarInputs} value={user.email}></input>
                     <input className="my-3 py-1" type="number" name="phone" placeholder="Ingrese su telefono" onChange={capturarInputs} value={user.phone}></input>
                 </div>
