@@ -3,15 +3,14 @@
 ## Installation
 
 ```sh
-git clone 
+git clone https://github.com/Pablo728/ReactCurso
 npm install
 npm start
 ```
 
-For production environments...
-
+## Para "production environments"...
 ```sh
-see EXAMPLE.env para la configuración de firebase
+Completar EXAMPLE.env para la configuración de firebase
 ```
 
 Built Using
