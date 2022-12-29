@@ -2,13 +2,19 @@ import ItemCount from '../ItemCount/ItemCount.js';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext.js';
+import Swal from 'sweetalert2';
 
 const ItemDetail = ({title, id, stock, price, category, pictureUrl, description}) => {
 
-    const { addItems, isInCart } = useContext(CartContext)
+    const {addItems, isInCart } = useContext(CartContext)
     
     const handleOnAdd = (quantity) => {
-        alert("se agrego al carrito " + quantity)
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: "Se agregó " + quantity + " producto(s) al carrito.",
+            showConfirmButton: true,
+          })
         addItems({ id, title, price, quantity, pictureUrl })
     }
 
@@ -33,7 +39,9 @@ const ItemDetail = ({title, id, stock, price, category, pictureUrl, description}
                 <div className='col-12 col-lg-3 d-flex justify-content-center align-items-center'>
                     {
                         isInCart(id) ? (
-                            <Link className='botonCarro' to='/cart'>Finalizar compra</Link>
+                                <div>
+                                    <Link className='botonPrimary justify-content-center my-1' to='/cart'>Finalizar compra</Link>
+                                </div>
                         ) : (
                             <ItemCount initial={1} stock={stock} onAdd={handleOnAdd}></ItemCount>
                         )

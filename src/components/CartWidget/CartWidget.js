@@ -9,10 +9,11 @@ const CartWidget = () => {
     const totalQuantity = getQuantity()
 
     return (
-        <Link className="botonCarro" to='/cart'>
+        ( totalQuantity === 0 ) ? ('') :
+        (<Link className="botonCarro" to='/cart'>
             <img src={'/images/cart.png'} alt="carrito de compras"/>
             { totalQuantity }
-        </Link>
+        </Link>)
     )
 }
 

@@ -1,37 +1,43 @@
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList.js';
-import { getItems, getItemsByCategory } from '../asyncMock/asyncMock.js'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { getDocs, collection, query, where  } from "firebase/firestore";
+import { db } from "../../services/firebase/firebaseConfig.js"
 
 const ItemListContainer = () => {
     
-
+    const [loading, setLoading] = useState(true)
     const [items, setItems] = useState([])
 
     const { categoryId } = useParams()
 
     useEffect(() => {
+      setLoading(true)
+      const collectionRef = categoryId
+      ? query(collection(db, 'items'), where('category', '==', categoryId))
+      : collection(db, 'items')
 
-        if(categoryId) {
-          getItemsByCategory(categoryId)
-            .then(response => {
-            setItems(response)
-          })
-            .catch(error => {
-              alert('Error')
-          }) 
-        } else {
-          getItems()
-            .then(response => {
-            setItems(response)
-          })
-            .catch(error => {
-              alert('Error')
-          })    
-        }
-        
-      }, [categoryId])
+      getDocs(collectionRef)
+      .then(response => {
+        const newItems = response.docs.map(doc => {
+          const data = doc.data()
+          return {id:doc.id, ...data}
+        })
+        setItems(newItems)
+      })
+      .catch(error => {
+        alert("error")
+      })
+      .finally(() => {
+        setLoading(false)
+    })
+      
+    }, [categoryId])
+
+    if(loading) {
+      return <h2 className='d-flex justify-content-center align-items-center'>Loading...</h2>
+  }
 
     return (
         <div className='ItemListContainer d-flex row justify-content-center p-4'>

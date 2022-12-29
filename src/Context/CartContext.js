@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext({})
 
@@ -12,13 +13,53 @@ export const CartProvider = ({ children }) => {
         }
     }
 
+    const removeCart = () => {
+        Swal.fire({
+            title: 'Está seguro que desea vaciar su carrito?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: 'red',
+            cancelButtonColor: 'gray',
+            confirmButtonText: 'Si, Vaciar carrito!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                'Carrito Vacío!',
+                'Su carrito ha sido vaciado!',
+                'success',
+                setCart([])
+              )
+            }
+        })
+    }
+
+    const removeCartPostVenta = () => {
+        setCart([])   
+    }
+
     const isInCart = (id) => {
         return cart.some(items => items.id === id)
     }
 
     const removeItems = (id) => {
         const newCart = cart.filter(items => items.id !== id)
-        setCart(newCart)
+        Swal.fire({
+            title: 'Está seguro que desea eliminar este producto de su carrito?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: 'red',
+            cancelButtonColor: 'gray',
+            confirmButtonText: 'Si, Eliminar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                'Producto Eliminado!',
+                'Su producto ha sido eliminado!',
+                'success',
+                setCart(newCart)
+              )
+            }
+        })
     }
 
     const getQuantity = () => {
@@ -42,7 +83,7 @@ export const CartProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{ cart, addItems, removeItems, isInCart, getQuantity, getTotal }}>
+        <CartContext.Provider value={{ cart, addItems, removeItems, isInCart, getQuantity, getTotal, setCart, removeCart, removeCartPostVenta }}>
             { children }
         </CartContext.Provider>
     )
