@@ -36,14 +36,14 @@ Este proyecto es un e-commerce con carrito de compras, desarrollado en React y F
 
 ##Configuración para Producción
 
-Completa el archivo EXAMPLE.env con la configuración de Firebase.
-Configura variables de entorno y despliega en el entorno de producción.
+- Completa el archivo EXAMPLE.env con la configuración de Firebase.
+- Configura variables de entorno y despliega en el entorno de producción.
 
 
 ##Funcionalidades Principales
 
-Carrito de Compras: Añade, actualiza y elimina productos en tiempo real.
-Autenticación: Integración de Firebase para gestionar usuarios.
-Routing Dinámico: Implementado con React Router.
-Gestión de Estado: Uso de hooks y context API para mantener la data fluida y escalable.
+- Carrito de Compras: Añade, actualiza y elimina productos en tiempo real.
+- Autenticación: Integración de Firebase para gestionar usuarios.
+- Routing Dinámico: Implementado con React Router.
+- Gestión de Estado: Uso de hooks y context API para mantener la data fluida y escalable.
   
