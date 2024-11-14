@@ -34,13 +34,13 @@ Este proyecto es un e-commerce con carrito de compras, desarrollado en React y F
    npm start
 
 
-##Configuración para Producción
+## Configuración para Producción
 
 - Completa el archivo EXAMPLE.env con la configuración de Firebase.
 - Configura variables de entorno y despliega en el entorno de producción.
 
 
-##Funcionalidades Principales
+## Funcionalidades Principales
 
 - Carrito de Compras: Añade, actualiza y elimina productos en tiempo real.
 - Autenticación: Integración de Firebase para gestionar usuarios.
