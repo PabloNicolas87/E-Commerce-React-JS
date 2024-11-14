@@ -1,4 +1,4 @@
-# ReactCurso - Tienda Online
+# E-commerce - Tienda Online
 
 Este proyecto es un e-commerce con carrito de compras, desarrollado en React y Firebase, que ofrece una experiencia de usuario amigable con actualizaciones visuales instantáneas y código escalable.
 
@@ -26,12 +26,12 @@ Este proyecto es un e-commerce con carrito de compras, desarrollado en React y F
 
 2. Instala las dependencias:
    ```bash
-  npm install
+   npm install
 
 
 3. Inicia el servidor de desarrollo:
    ```bash
-  npm start
+   npm start
 
 
 ##Configuración para Producción
